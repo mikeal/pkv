@@ -146,7 +146,7 @@ An interface could now be produced for reading and writing that prefixes that ke
 
 This this inserts a secure salt into every PKV-KEY it is applied to this is the perfect method for producing and maintaining forks.
 
-Since this method to agreement can be implemented by any party who can manipulate the key space it is a highly accessible freedom to form any data described in PKV.
+Since this method of agreement can be implemented by any party who can manipulate the key space it is a highly accessible freedom to fork any data described in PKV.
 
 This freedom is beyond the bounds of property governed by copyright as it is **unownable** and its basis already agreed to.
 
