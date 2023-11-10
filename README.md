@@ -12,21 +12,24 @@ This gives us, the **public**, the right to build whatever systems we want descr
 
 # Key Cryptography
 
-A PKV-KEY is defined here as a cryptographic identifier for a sequence of values (key parts).
+A PKV-KEY is a recursive cryptographic process applied to a sequence of values (KEY "parts").
 
-No specific encoding of these values can be defined herein because differences in encoding introduce indeterminism into the process. Agreement about encoding is then part of the consensus agreement parties need to reach in order to arrive at a consensus achieving result.
+No specific encoding of these values can be defined herein because differences in encoding introduce indeterminism into the process. Agreement about encoding is part of the consensus agreement parties need to reach in order to arrive at a consensus achieving result.
 
-Examples herein will use strings, encoded into a JSON array.
+Examples herein will use strings, encoded into sequence as a JSON array.
 
-Example:
-[ "twitter.com", "@mikeal", "fullname"]
+```
+[ "twitter.com", "@mikeal", "fullname" ]
+```
 
-The user account for "@mikeal" is thus uniquely identified by means of the following process, 
-1. The first part in the key is  passed to a hash function
-2. the binary result of the prior step, followed by the hash result of the next part, is passed to another hash function
-3. the binary result of which is used to repeat step 2 with every key part until all parts in the key are exhausted.
+The PKV-KEY can be determined by, 
+1. Passing the first part of the key to a hash function, then hashing the result again (double-hash),
+2. the binary result of the prior step, followed by the hash result of the subsequent part, is passed to another hash function
+3. the binary hash result of which is used to repeat step 2 with every key part until all parts in the key are exhausted.
 
-This final hash result is PKV-KEY.
+This final result is PKV-KEY.
+
+Note: The double-hash of the first key part is necessary to avoid conflicts.
 
 # Value Cryptography
 
@@ -36,18 +39,20 @@ The process is simple,
 1. The value being described is passed to a hash function.
 2. The binary result of the prior step, followed by the PKV-KEY, are passed to a hash function.
 
-This hash result is PKV-VALUE.
+This result is PKV-VALUE.
 
 # Key-Value Cryptography
 
-A PKV-KV is an identifier for a Key-Value pair. It is simply,
+A PKV-KV is a Key-Value pair. The process is simply,
 1. the binary hash result of PKV-KEY, followed by PKV-VALUE.
 
-This hash result is PKV-KV.
+This result is PKV-KV.
 
 # Namespace Cryptography
 
-There is no PKV-NS because a namespace in PKV is just a PKV-KEY. So, the PKV-KEY [ "twitter.com", "@mikeal", "fullname"] is securely in the namespace of [ "twitter.com", "@mikeal" ] and our PKV-KEY cryptography already produces a unique identifier for that as well. This is true for any position in the key sequence.
+There is no "PKV-NS" because a namespace in PKV is just a PKV-KEY. 
+
+The PKV-KEY [ "twitter.com", "@mikeal", "fullname"] is securely in the namespace of [ "twitter.com", "@mikeal" ] and our PKV-KEY cryptography already produces a unique identifier for that as well. This is true for any position in the key sequence.
 
 Note that, cryptographically speaking, this is a sequence and not a heirarchy. A heirarchy could be formed as a view of the sequence, but all manor of typed arrays and even sets can also be encoded as a sequence.
 
