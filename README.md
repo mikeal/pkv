@@ -1,6 +1,6 @@
 # pkv - Public Key-Value Cryptography 
 
-Public Key-Value Cryptography (PKV) is the collection of simple cryptographic processes that can be used to create numerous permissionless data systems.
+Public Key-Value Cryptography (PKV) is a collection of simple cryptographic processes that can be used to create permissionless data systems.
 
 The use cases for these systems fall into two categories:
 * Systems for storing new data and
