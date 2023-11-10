@@ -6,7 +6,7 @@ The use cases for these systems fall into two categories:
 * Systems for storing new data and
 * Systems describing already existent data
 
-The later category is perhaps the most critical to focus on. Since PKV is a purely cryptographic process describing key-value pairs it functions as a fair-use common description of what already exists. As such, it is not copyrightable, because it's just a bunch of hashes and signatures 😅
+The later category is perhaps the most critical to focus on. Since PKV is a purely cryptographic process describing key-value pairs it functions as a fair-use common description of what already exists. As such, it is not copyrightable, it's just a bunch of hashes and signatures 😅
 
 This gives us, the **public**, the right to build whatever systems we want describing the digital world ***as it appears***. Anything already viewable, including everything on The Web, can be used as a data source without any permission granted from the owner, because all you're doing is cryptographically describing what is in common public view *as it appears in pubic view*.
 
